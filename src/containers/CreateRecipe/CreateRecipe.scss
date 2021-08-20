@@ -1,0 +1,488 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+input {
+  padding-left: 5px;
+}
+
+.SubConfHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ConfHeader {
+  background: $main-green;
+  color: $font-white;
+  font-size: 0.88rem;
+  font-weight: bold;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.ConfSpan {
+  font-size: 1rem;
+  font-weight: bold;
+  align-content: center;
+  color: $font-icon-text;
+}
+
+.ConfBox {
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+  // padding-left: 5px;
+  box-sizing: border-box;
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  border-radius: 4px;
+  display: flex;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+.Container {
+  @extend .GridCommons;
+  height: 469.813px;
+  min-height: 469.813px;
+  grid-template-columns: 57% 1fr;
+  grid-template-rows: 50% 1fr;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  grid-template-areas:
+    "ZO ZT"
+    "ZB ZB";
+
+  .Zone1 {
+    @extend .SubGrid;
+    display: flex;
+    grid-area: ZO;
+    flex-direction: column;
+
+    .ZoneUp {
+      @extend .SubGrid;
+
+      display: flex;
+      justify-content: center;
+
+      .ZoneList {
+        margin-top: 5px;
+        @extend .GridCommons;
+        width: 80%;
+        grid-area: LI;
+        grid-template-rows: 13% 1% 1fr;
+        grid-template-areas:
+          "H"
+          "."
+          "B";
+
+        .ZoneHeader {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: H;
+          @extend .ConfHeader;
+
+          .Title11 {
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+          }
+        }
+
+        .ZoneBody {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: B;
+          background: $color-text;
+          border-bottom-left-radius: 7px;
+          border-bottom-right-radius: 7px;
+        }
+      }
+    }
+
+    .ZoneCenter {
+      @extend .SubGrid;
+      display: flex;
+      margin-top: 5px;
+      flex-direction: column;
+      align-items: center;
+
+      .ZoneBtn {
+        margin-top: 5px;
+        @extend .SubGrid;
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+
+        .BtnSearch {
+          @extend .SubGrid;
+          display: flex;
+        }
+      }
+
+      .TextBoxContainer {
+        @extend .SubGrid;
+        display: flex;
+        width: 80%;
+        margin-top: 5px;
+
+        .TextBox {
+          @extend .SubGrid;
+          padding-left: 5px;
+          padding-right: 5px;
+          background: $color-text;
+          outline: none;
+          border-style: none;
+          border-radius: 7px;
+          font-weight: bold;
+          font-size: 0.8rem;
+          color: $font-icon-text;
+        }
+      }
+
+      .CheckBoxAdic {
+        @extend .SubGrid;
+        display: flex;
+        width: 80%;
+        align-content: center;
+        align-items: center;
+
+        .Label {
+          font-size: 1rem;
+          font-weight: bold;
+          color: $font-awesome-icono;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .Zone2 {
+    @extend .GridCommons;
+    grid-area: ZT;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3% 4% 1fr;
+    grid-template-areas:
+      "."
+      "PH"
+      "BT";
+
+    .ZoneBox {
+      @extend .GridCommons;
+      grid-area: PH;
+
+      .InputBox {
+        @extend .GridCommons;
+        grid-row-gap: 0.5rem;
+        // margin-bottom: 1.6rem;
+        grid-template-columns: 40% 50% 1fr;
+        grid-template-rows: 12% 12% 12% 12% 12% 12% 12% 1fr;
+        grid-template-areas:
+          "ZN BN ."
+          "ZC BC ."
+          "ZU BU ."
+          "ZR BR ."
+          "ZD BD ."
+          "ZP BP ."
+          "CC TB ."
+          ". . .";
+
+        .ZoneMin {
+          grid-area: ZN;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+          box-sizing: content-box;
+        }
+
+        .ZoneMax {
+          grid-area: ZC;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+
+        .ZoneOpt {
+          grid-area: ZU;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+        .ZoneCritical {
+          grid-area: ZR;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+        .ZoneData {
+          grid-area: ZD;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+
+        .ZonePrice {
+          grid-area: ZP;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+
+        .ZoneCenterCoste {
+          grid-area: CC;
+          @extend .SubGrid;
+          @extend .ConfSpan;
+        }
+
+        .BoxMin {
+          grid-area: BN;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+
+        .BoxMax {
+          grid-area: BC;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+        .BoxOpt {
+          grid-area: BU;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+        .BoxCritical {
+          grid-area: BR;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+        .BoxDate {
+          grid-area: BD;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+        .BoxPrice {
+          grid-area: BP;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+        .TextBox3 {
+          grid-area: TB;
+          @extend .SubGrid;
+          @extend .ConfBox;
+        }
+      }
+    }
+  }
+
+  .ZoneBelow {
+    grid-area: ZB;
+    @extend .GridCommons;
+    grid-template-columns: 65% 1fr;
+    grid-template-areas: "ZL ZB";
+
+    .ZoneListEr {
+      @extend .SubGrid;
+      grid-area: ZL;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .ListCont {
+        @extend .GridCommons;
+        height: 117.45px;
+        margin-bottom: 5px;
+        grid-template-rows: 20% 2% 1fr;
+        grid-template-areas:
+          "H"
+          "."
+          "B";
+
+        .Header {
+          @extend .GridCommons;
+          @extend .ConfHeader;
+          grid-area: H;
+          grid-template-columns: 53% 16% 14% 1fr;
+          grid-template-areas: "N Q U P";
+
+          .Text1 {
+            grid-area: N;
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+            border-right: 2px solid $font-white;
+          }
+
+          .Text2 {
+            grid-area: Q;
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+            border-right: 2px solid $font-white;
+          }
+
+          .Text3 {
+            grid-area: U;
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+            border-right: 2px solid $font-white;
+          }
+
+          .Text4 {
+            grid-area: P;
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+          }
+        }
+
+        .ListContCh {
+          display: flex;
+          @extend .SubGrid;
+          grid-area: B;
+          height: 91.68px;
+          overflow: auto;
+          flex-direction: column;
+          border-bottom-left-radius: 7px;
+          border-bottom-right-radius: 7px;
+        }
+      }
+
+      .ZoneSubList {
+        @extend .GridCommons;
+        width: 70%;
+        height: 117.45px;
+        grid-area: LI;
+        grid-template-rows: 20% 1% 1fr;
+        grid-template-areas:
+          "H"
+          "."
+          "B";
+
+        .ZoneHeader2 {
+          @extend .GridCommons;
+          grid-area: H;
+          @extend .ConfHeader;
+          grid-template-columns: 100%;
+          grid-template-areas: "TO";
+
+          .Title1 {
+            @extend .SubGrid;
+            @extend .SubConfHeader;
+            grid-area: TO;
+            border-right: 2px solid $font-white;
+          }
+        }
+
+        .ZoneBody2 {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: B;
+          height: 91.68px;
+          overflow: auto;
+          background: $color-text;
+          border-bottom-left-radius: 7px;
+          border-bottom-right-radius: 7px;
+        }
+      }
+    }
+
+    .ZoneButtons {
+      @extend .GridCommons;
+      grid-area: ZB;
+      grid-template-rows: 50% 1fr;
+      grid-template-areas:
+        "TB"
+        "BT";
+
+      .ZoneTextBox {
+        @extend .GridCommons;
+        grid-area: TB;
+        grid-gap: 0.8rem;
+        font-size: 0.75rem;
+        color: $font-icon-text;
+        font-weight: bold;
+
+        grid-template-columns: 9% 20% 20%;
+        grid-template-rows: 10% 15% 10% 15% 1fr;
+        grid-template-areas:
+          ". TO ."
+          ". TB CB"
+          ". TT ."
+          ". BT CT"
+          ". . .";
+
+        .Text11 {
+          @extend .SubGrid;
+          grid-area: TO;
+        }
+
+        .BoxCompanion {
+          @extend .SubGrid;
+          grid-area: TB;
+          @extend .ConfBox;
+          height: 1.5rem;
+        }
+
+        .ComboBox {
+          @extend .SubGrid;
+          grid-area: CB;
+        }
+
+        .Text22 {
+          @extend .SubGrid;
+          grid-area: TT;
+        }
+
+        .BoxCompanion2 {
+          @extend .SubGrid;
+          @extend .ConfBox;
+          height: 1.5rem;
+          grid-area: BT;
+        }
+
+        .ComboBox2 {
+          @extend .SubGrid;
+          grid-area: CT;
+        }
+      }
+
+      .Buttons {
+        @extend .GridCommons;
+        grid-area: BT;
+        grid-column-gap: 0.5rem;
+        grid-template-columns: 32% 20% 20% 1fr;
+        grid-template-rows: 30% 1fr 30%;
+        grid-template-areas:
+          ". . . ."
+          ". ED SA EX"
+          ". . . .";
+
+        .BtnEdit {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: ED;
+        }
+
+        .BtnSave {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: SA;
+        }
+
+        .BtnExit {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: EX;
+        }
+      }
+    }
+  }
+}
+
+.BtnPlus {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  color: $font-white;
+  background: $main-green;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}

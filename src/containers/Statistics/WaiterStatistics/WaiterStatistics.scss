@@ -1,0 +1,92 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerWaiterStatistics {
+  @extend .GridCommons;
+  grid-template-rows: 21.5% 1fr 69%;
+  grid-template-areas:
+    "BT"
+    "SL"
+    "ST";
+
+  .ZoneButtons {
+    @extend .GridCommons;
+    grid-area: BT;
+    grid-column-gap: 1.29rem;
+    grid-template-columns: 3% 6.7% 6.7% 6.7% 6.7% 1fr;
+    grid-template-rows: 54% 34.9% 1fr;
+    grid-template-areas:
+      ". . . . . ."
+      ". BD BS BM BY ."
+      ". . . . . .";
+
+    .BtnDay {
+      @extend .SubGrid;
+      grid-area: BD;
+    }
+
+    .BtnWeek {
+      @extend .SubGrid;
+      grid-area: BS;
+    }
+
+    .BtnMonth {
+      @extend .SubGrid;
+      grid-area: BM;
+    }
+
+    .BtnYear {
+      @extend .SubGrid;
+      grid-area: BY;
+    }
+  }
+
+  .ZoneSelect {
+    @extend .SubGrid;
+    display: flex;
+    grid-area: SL;
+  }
+
+  .ZoneStatistics {
+    @extend .GridCommons;
+    grid-area: ST;
+    grid-template-rows: 14% 1% 1fr;
+    grid-template-areas:
+      "HE"
+      "."
+      "TB";
+
+    .ZoneHeader {
+      @extend .SubGrid;
+      grid-area: HE;
+    }
+
+    .ZoneTablet {
+      @extend .GridCommons;
+      grid-area: TB;
+      grid-template-columns: 3.8% 1fr 7.2%;
+      grid-template-rows: 80% 1fr;
+      grid-template-areas:
+        ". LC ."
+        ". . .";
+
+      .ListContainer {
+        display: grid;
+        flex-direction: column;
+        height: 100%;
+        grid-area: LC;
+        height: 270px;
+        overflow: auto;
+      }
+    }
+  }
+}

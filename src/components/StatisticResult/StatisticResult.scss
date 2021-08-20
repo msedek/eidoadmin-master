@@ -1,0 +1,83 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.confGeneral {
+  font-size: 0.88rem;
+  font-weight: bold;
+
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerResult {
+  @extend .GridCommons;
+  grid-template-columns: 50% 1fr;
+  grid-template-areas: "IF BT";
+
+  .ZoneInfo {
+    @extend .GridCommons;
+    grid-area: IF;
+    grid-template-columns: 26% 1fr 23%;
+    grid-template-rows: 32% 1fr 52%;
+    grid-template-areas:
+      ". . ."
+      ". TX ."
+      ". . .";
+
+    .RealText {
+      @extend .SubGrid;
+      @extend .confGeneral;
+      grid-area: TX;
+      font-style: italic;
+      color: $font-awesome-icono;
+
+    }
+  }
+
+  .ZoneButton {
+    @extend .GridCommons;
+    grid-area: BT;
+    grid-template-columns: 52.1% 1fr 32.6%;
+    grid-template-rows: 29% 1fr 48.4%;
+    grid-template-areas:
+      ". . ."
+      ". BT ."
+      ". . .";
+    &:hover > .ButtonPlus,
+    &:active {
+      filter: brightness($base-percent * 110);
+      cursor: pointer;
+    }
+
+    .ButtonPlus {
+      @extend .GridCommons;
+      grid-area: BT;
+      border-radius: 4px;
+      color: $inner-frame;
+      @extend .confGeneral;
+      grid-template-columns: 15.9% 39% 7% 22% 1fr;
+      grid-template-rows: 11% 1fr 16.5%;
+      grid-template-areas:
+        ". . . . ."
+        ". TX . LP ."
+        ". . . . .";
+
+      .TextView {
+        @extend .SubGrid;
+        grid-area: TX;
+      }
+
+      .LogoPlus {
+        @extend .SubGrid;
+        grid-area: LP;
+      }
+    }
+  }
+}

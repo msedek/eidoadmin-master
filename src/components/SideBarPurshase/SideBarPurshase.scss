@@ -1,0 +1,58 @@
+@import '../../_variables.scss';
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.SideBarContainer {
+  @extend .GridCommons;
+  grid-row-gap: 0.62rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: $font-awesome-icono;
+  grid-template-rows: 0% 5.3% 5% 5%;
+  grid-template-areas: '.'
+                       'CB'
+                       'CP' 
+                       'CI';
+
+  .ZoneText1 {
+    @extend .GridCommons;
+    align-content: center;
+    grid-area: CB;
+  
+
+    .Text1 {
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText2 {
+    @extend .GridCommons;
+    align-content: center;
+    grid-area: CP;
+
+    .Text2 {
+      margin-left: 0.55rem;
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText3 {
+    @extend .GridCommons;
+    align-content: center;
+    grid-area: CI;
+
+    .Text3 {
+      margin-right: 0.1rem;
+      cursor: pointer;
+    }
+  }
+}

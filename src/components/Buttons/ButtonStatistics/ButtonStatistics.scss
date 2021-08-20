@@ -1,0 +1,39 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Button {
+  @extend .GridCommons;
+  grid-area: OD;
+  border-radius: 4px;
+  color: $font-white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  grid-template-columns: 25% 1fr 25%;
+  grid-template-rows: 25% 1fr 25%;
+  grid-template-areas:
+    ". . ."
+    ". TX ."
+    ". . .";
+
+  &:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+
+  .Text {
+    grid-area: TX;
+    @extend .SubGrid;
+    display: flex;
+    margin-left: 0.2rem;
+  }
+}

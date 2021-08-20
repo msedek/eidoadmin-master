@@ -1,0 +1,15 @@
+@import '../../_variables.scss';
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.SideBarContainer {
+  @extend .SubGrid;
+}

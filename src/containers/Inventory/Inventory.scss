@@ -1,0 +1,80 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerInventory {
+  @extend .GridCommons;
+
+  grid-template-columns: 4.1% 1fr 4.1%;
+  grid-template-rows: 5.5% 73% 1fr;
+  grid-template-areas:
+    ". . ."
+    ". IN ."
+    ". BT .";
+
+  .ZoneInfoInventario {
+    @extend .GridCommons;
+    grid-area: IN;
+    grid-template-rows: 6.5% 1% 1fr;
+    grid-template-areas:
+      "HE"
+      "."
+      "IN";
+
+    .ZoneHeader {
+      @extend .SubGrid;
+      grid-area: HE;
+    }
+
+    .ListaContainer {
+      display: flex;
+      grid-area: IN;
+      flex-direction: column;
+      height: 320px;
+      overflow: auto;
+    }
+  }
+
+  .Buttons {
+    @extend .GridCommons;
+    grid-area: BT;
+    grid-column-gap: 0.5rem;
+    grid-template-columns: 45% 15% 20% 7.1% 1fr;
+    grid-template-rows: 8.6% 1fr 16%;
+    grid-template-areas:
+      ". . . . ."
+      ". TX CB BL BI"
+      ". . . . .";
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+      color: $font-circle-button;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .ComboBox {
+      @extend .SubGrid;
+      grid-area: CB;
+    }
+
+    .BtnShoppingList {
+      @extend .SubGrid;
+      grid-area: BL;
+    }
+
+    .BtnPhysicalInventory {
+      @extend .SubGrid;
+      grid-area: BI;
+    }
+  }
+}

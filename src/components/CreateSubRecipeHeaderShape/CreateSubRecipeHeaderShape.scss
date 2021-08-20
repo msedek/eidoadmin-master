@@ -1,0 +1,44 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-columns: 8% 1fr 8.6%;
+  grid-template-areas: ". LI .";
+
+  .List {
+    display: flex;
+    grid-area: LI;
+    overflow: auto;
+    width: 100%;
+    height: 41vh;
+    flex-direction: column;
+    position: relative;
+    border-right: 3px solid $color-text;
+    border-left: 3px solid $color-text;
+    border-bottom: 3px solid $color-text;
+  }
+}
+
+.TexBox {
+  font-size: 0.8rem;
+  background: $color-text;
+  width: 5rem;
+  display: grid;
+  border-radius: 4px;
+  outline: none;
+  border-style: none;
+  text-align: center;
+  color: $font-awesome-icono;
+  font-weight: bold;
+  margin-left: 0.8rem;
+}

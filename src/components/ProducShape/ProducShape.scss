@@ -1,0 +1,170 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.TextConf {
+  display: flex;
+  font-size: 0.85rem;
+  color: $font-icon-text;
+  position: relative;
+  font-weight: bold;
+}
+
+.ConfBox {
+  outline: none;
+  border-style: none;
+  background: $color-text;
+  font-weight: bold;
+  border-radius: 6px;
+  box-sizing: border-box;
+  @extend .SubGrid;
+  font-size: 0.8rem;
+  align-content: center;
+  color: $font-icon-text;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Zone1 {
+  @extend .GridCommons;
+  grid-template-rows: 41.5% 1fr;
+  grid-template-areas:
+    "ZI"
+    "ZC";
+
+  .ZoneInfo {
+    max-width: 100%;
+    max-height: 100%;
+    grid-row-gap: 0.2rem;
+    @extend .GridCommons;
+    grid-area: ZI;
+    grid-template-rows: 43% 13% 1fr;
+    grid-template-areas:
+      "TU"
+      "TD"
+      "TT";
+
+    .ZoneText1 {
+      @extend .GridCommons;
+      grid-area: TU;
+      max-width: 100%;
+      max-height: 100%;
+      grid-row-gap: 0.2rem;
+
+      .TextBox1 {
+        margin-bottom: -0.4rem;
+      }
+
+      .TextBox2 {
+        @extend .ConfBox;
+        // height: 1.2rem;
+        // width: 18.5rem;
+        padding-left: 1rem;
+      }
+
+      .TextBox3 {
+        @extend .ConfBox;
+        // height: 1.2rem;
+        // width: 18.5rem;
+        padding-left: 1rem;
+      }
+    }
+
+    .ZoneText2 {
+      @extend .SubGrid;
+      display: grid;
+      grid-area: TD;
+      max-width: 100%;
+      max-height: 100%;
+      grid-column-gap: 0.2rem;
+      grid-template-columns: 46.9% 1fr;
+      grid-template-areas: "D S";
+
+      .TextBox1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        grid-area: D;
+        background: $color-text;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        color: $font-awesome-icono;
+        font-weight: bold;
+      }
+
+      .TextBox2 {
+        grid-area: S;
+        @extend .ConfBox;
+        // width: 8.5rem;
+        // height: 1.1rem;
+        padding-left: 1rem;
+      }
+    }
+
+    .ZoneText3 {
+      margin-bottom: -0.3rem;
+      @extend .SubGrid;
+      max-height: 80%;
+      display: flex;
+      grid-area: TT;
+      align-items: flex-start;
+      background: $color-text;
+      box-sizing: border-box;
+
+      .TextBox3 {
+        padding-left: 1rem;
+        width: 100%;
+        outline: none;
+        border-style: none;
+        background: $color-text;
+        // max-height: 100%;
+        color: $font-icon-text;
+        font: inherit;
+        font-weight: bold;
+        font-size: 0.8rem;
+        height: 80%;
+        border-radius: 6px;
+        resize: none;
+      }
+    }
+  }
+
+  .ZoneCheck {
+    margin-top: -0.5rem;
+    @extend .GridCommons;
+    grid-area: ZC;
+    grid-row-gap: 0.2rem;
+    grid-template-columns: 100%;
+    grid-template-rows:  36% 36% 36%;
+    grid-template-areas:
+      "CU"
+      "CD"
+      "CT";
+
+    .ListCheck1 {
+      @extend .SubGrid;
+      display: flex;
+      grid-area: CU;
+    }
+
+    .ListCheck2 {
+      @extend .SubGrid;
+      display: flex;
+      grid-area: CD;
+    }
+
+    .ListCheck3 {
+      @extend .SubGrid;
+      display: flex;
+      grid-area: CT;
+    }
+  }
+}

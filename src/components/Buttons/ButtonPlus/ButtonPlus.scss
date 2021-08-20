@@ -1,0 +1,54 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-columns: 100%;
+  grid-template-areas: "B";
+
+  &:hover > .BtnPlus,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+
+  .BtnPlus {
+    @extend .GridCommons;
+    grid-area: B;
+    background: $main-green;
+    border-radius: 8px;
+    grid-template-columns: 25% 1fr;
+    grid-template-areas: "I T";
+
+    .Icon {
+      @extend .SubGrid;
+      display: flex;
+      grid-area: I;
+      color: $font-white;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Text {
+      @extend .SubGrid;
+      display: flex;
+      grid-area: T;
+      align-items: center;
+      font-weight: bold;
+      color: $font-white;
+
+      .RealText {
+        display: flex;
+      }
+    }
+  }
+}

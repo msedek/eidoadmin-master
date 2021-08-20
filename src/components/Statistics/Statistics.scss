@@ -1,0 +1,44 @@
+@import '../../_variables.scss';
+
+.GridCommons {
+    display: grid;
+    @extend .SubGrid
+}
+
+.SubGrid {
+    width: 100%;
+    height: 100%;
+}
+
+.ContainerStatistics {
+  @extend .GridCommons;
+  grid-template-rows: 9% 1fr;
+  grid-template-areas: 'TI'
+                       'ST';
+  
+  .ZoneTitle {
+    @extend .GridCommons;
+    grid-area: TI;
+    grid-template-columns: 13.1% 1fr 0%;
+    grid-template-rows: 30% 1fr 21%;
+    grid-template-areas: '. . .'
+                         '. TX .' 
+                         '. . .';
+                         
+    .RealTitle {
+      @extend .SubGrid;
+      grid-area: TX;
+      font-style: italic;
+      color: $font-awesome-icono;
+      font-weight: bold;
+      margin-top: -0.1rem;
+      font-size: 0.95rem;
+      margin-left: -0.14rem;
+    }
+  }
+  
+  .ZoneStatistics {
+    @extend .GridCommons;
+    grid-area: ST;
+  }
+}

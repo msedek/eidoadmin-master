@@ -1,0 +1,345 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerCatalog {
+  @extend .GridCommons;
+  grid-template-columns: 48.7% 1fr 51.2%;
+  grid-template-rows: 15.5% 1fr 15%;
+  grid-template-areas:
+    ". . ."
+    "C1 LI C2"
+    ". . .";
+
+  .Catalog1 {
+    @extend .GridCommons;
+    grid-area: C1;
+    grid-template-rows: 35% 35% 1fr;
+    grid-template-areas:
+      "Z1"
+      "Z2"
+      "Z3";
+
+    .Zone1 {
+      @extend .GridCommons;
+      grid-area: Z1;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName {
+          @extend .SubGrid;
+          display: flexl;
+          grid-area: TX;
+
+          .TextReal {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: -0.14rem;
+          }
+        }
+      }
+
+      .BtnSwicht {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 125% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -4.9rem;
+          margin-left: 1.8rem;
+        }
+      }
+    }
+
+    .Zone2 {
+      @extend .GridCommons;
+      grid-area: Z2;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog2 {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName2 {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: TX;
+
+          .TextReal2 {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0.8rem;
+          }
+        }
+      }
+
+      .BtnSwicht2 {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 125% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn2 {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -3.8rem;
+          margin-left: 1.8rem;
+        }
+      }
+    }
+
+    .Zone3 {
+      @extend .GridCommons;
+      grid-area: Z3;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog3 {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName3 {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: TX;
+
+          .TextReal3 {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1.9rem;
+          }
+        }
+      }
+
+      .BtnSwicht3 {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 145% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn3 {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -2.5rem;
+          margin-left: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .Line {
+    @extend .SubGrid;
+    display: flex;
+    grid-area: LI;
+    background: $font-awesome-icono;
+  }
+
+  .Catalog2 {
+    @extend .GridCommons;
+    grid-area: C2;
+    grid-template-rows: 35% 35% 1fr;
+    grid-template-areas:
+      "Z1"
+      "Z2"
+      "Z3";
+
+    .Zone1 {
+      @extend .GridCommons;
+      grid-area: Z1;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: TX;
+
+          .TextReal {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: -0.14rem;
+            margin-left: -4.7rem;
+          }
+        }
+      }
+
+      .BtnSwicht {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 125% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -4.9rem;
+          margin-left: -3rem;
+        }
+      }
+    }
+
+    .Zone2 {
+      @extend .GridCommons;
+      grid-area: Z2;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog2 {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName2 {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: TX;
+
+          .TextReal2 {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0.8rem;
+            margin-left: -4.8rem;
+          }
+        }
+      }
+
+      .BtnSwicht2 {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 125% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn2 {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -3.8rem;
+          margin-left: -3rem;
+        }
+      }
+    }
+
+    .Zone3 {
+      @extend .GridCommons;
+      grid-area: Z3;
+      grid-template-rows: 25% 1fr;
+      grid-template-areas:
+        "Z1"
+        "Z2";
+
+      .NameCatalog3 {
+        @extend .GridCommons;
+        grid-area: Z1;
+        grid-template-columns: 44.5% 1fr 25.8%;
+        grid-template-rows: 15% 1fr 15%;
+        grid-template-areas:
+          ". . ."
+          ". TX ."
+          ". . .";
+
+        .RealName3 {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: TX;
+
+          .TextReal3 {
+            color: $font-awesome-icono;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1.9rem;
+            margin-left: -4.7rem;
+          }
+        }
+      }
+
+      .BtnSwicht3 {
+        @extend .GridCommons;
+        grid-area: Z2;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 145% 1fr;
+        grid-template-areas:
+          "SW ."
+          ". .";
+        .RealBtn3 {
+          @extend .GridCommons;
+          grid-area: SW;
+          margin-top: -2.5rem;
+          margin-left: -3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .SubGrid;
+  display: flex;
+  background: $main-green;
+  border-radius: 4px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+
+  .Icon {
+    color: $font-white;
+  }
+
+  .RealText {
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: $font-white;
+  }
+
+  &:hover > .BtnPrepare,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+}

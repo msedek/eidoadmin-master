@@ -1,0 +1,67 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ContainerSlider {
+  @extend .GridCommons;
+  grid-template-columns: 20% 1fr 22%;
+  grid-template-rows: 19% 1fr 35%;
+  grid-template-areas:
+    ". . ."
+    ". TX ."
+    ". . .";
+
+  .Headboard {
+    @extend .GridCommons;
+    grid-area: TX;
+    color: $main-green;
+    grid-template-columns: 2% 5% 2% 83% 2.5% 5% 1fr;
+    grid-template-rows: 10% 1fr 10%;
+    grid-template-areas:
+      ". . . . . . ."
+      ". LE . TX . RI ."
+      ". . . . . . .";
+
+    .LeftArrow {
+      @extend .SubGrid;
+      grid-area: LE;
+      font-size: 1rem;
+      &:hover {
+        filter: brightness(110%);
+        cursor: pointer;
+      }
+    }
+
+    .Text {
+      @extend .SubGrid;
+      grid-area: TX;
+
+      .RealText {
+        color: $font-awesome-icono;
+        font-size: 1rem;
+        font-weight: bold;
+        font-style: italic;
+        margin-left: 0.4rem;
+      }
+    }
+
+    .RightArrow {
+      @extend .SubGrid;
+      grid-area: RI;
+      font-size: 1rem;
+
+      &:hover {
+        filter: brightness(110%);
+        cursor: pointer;
+      }
+    }
+  }
+}

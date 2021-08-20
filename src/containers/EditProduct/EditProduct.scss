@@ -1,0 +1,287 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfBox {
+  outline: none;
+  border-style: none;
+  background: $color-text;
+  font-weight: bold;
+  padding-left: 1.15rem;
+  border-radius: 6px;
+  box-sizing: border-box;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-columns: 4% 40% 52% 1fr;
+  grid-template-rows: 5.5% 1fr 5.9%;
+  grid-template-areas:
+    ". . . ."
+    ". ZO ZT ."
+    ". . . .";
+
+
+    .Zone1 {
+    @extend .GridCommons;
+    grid-area: ZO;
+    grid-template-rows: 41.5% 1fr;
+    grid-template-areas:
+      "ZI"
+      "ZC";
+
+    .ZoneInfo {
+      @extend .GridCommons;
+      grid-area: ZI;
+      grid-row-gap: 0.15rem;
+      grid-template-rows: 43% 13% 37%;
+      grid-template-areas:
+        "TU"
+        "TD"
+        "TT";
+
+      .ZoneText1 {
+        @extend .GridCommons;
+        grid-area: TU;
+        grid-row-gap: 0.12rem;
+
+        .TextBox1 {
+          height: 1.2rem;
+          width: 18.5rem;
+        }
+
+        .TextBox2 {
+          @extend .ConfBox;
+          height: 1.2rem;
+          width: 18.5rem;
+        }
+
+        .TextBox3 {
+          @extend .ConfBox;
+          height: 1.2rem;
+          width: 18.5rem;
+        }
+      }
+
+      .ZoneText2 {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: TD;
+        grid-template-columns: 46.9% 1fr;
+        grid-template-areas: "D S";
+
+        .Date {
+          grid-area: D;
+          @extend .SubGrid;
+          display: flex;
+          align-items: center;
+
+          .TextBox1 {
+            @extend .ConfBox;
+            width: 8.8rem;
+            height: 1.1rem;
+          }
+        }
+
+        .Soles {
+          grid-area: S;
+          @extend .SubGrid;
+          display: flex;
+          align-items: center;
+          padding-left: 0.9rem;
+          box-sizing: border-box;
+
+          .TextBox2 {
+            @extend .ConfBox;
+            width: 8.5rem;
+            height: 1.1rem;
+          }
+        }
+      }
+
+      .ZoneText3 {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: TT;
+
+        .TextBox1 {
+          @extend .ConfBox;
+          width: 18.5rem;
+          height: 5rem;
+        }
+      }
+    }
+
+    .ZoneCheck {
+      @extend .GridCommons;
+      grid-area: ZC;
+      grid-row-gap: 1.3rem;
+      grid-template-columns: 100%;
+      grid-template-rows: 0.5% 39% 36%;
+      grid-template-areas:
+        "."
+        "CU"
+        "CD";
+
+      .ListCheck1 {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: CU;
+      }
+
+      .ListCheck2 {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: CD;
+      }
+    }
+  }
+
+  .Zone2 {
+    @extend .GridCommons;
+    grid-area: ZT;
+    grid-template-rows: 58.5% 15% 1fr;
+    grid-template-areas:
+      "PH"
+      "ID"
+      "BT";
+
+    .ZonePhoto {
+      @extend .GridCommons;
+      grid-area: PH;
+      grid-template-columns: 7.2% 1fr 1.5%;
+      grid-template-areas: ". PH .";
+
+      .Photo {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: PH;
+        background: $font-awesome-icono;
+        border-radius: 20px;
+      }
+    }
+
+    .ZoneLanguage {
+      @extend .GridCommons;
+      grid-area: ID;
+      grid-template-columns: 57.5% 1fr;
+      grid-template-areas: "CH";
+
+      .ZoneCheckBox {
+        @extend .GridCommons;
+        grid-area: CH;
+        grid-column-gap: 0.5rem;
+        grid-template-columns: 120% 11.1% 7% 11.1% 1fr;
+        grid-template-rows: 35% 1fr 25%;
+        grid-template-areas:
+          ". . . . . "
+          "QG SP CS EN CE"
+          ". . . . . ";
+
+        .QuantityGarnishes {
+          grid-area: QG;
+
+          .TextBox2 {
+            @extend .ConfBox;
+            height: 1.2rem;
+            width: 8rem;
+            padding-left: 1rem;
+            margin-left: 3rem;
+          }
+        }
+
+        .Spanish {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: SP;
+          background-size: cover;
+          border-radius: 50%;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+
+        .CheckBoxSpanish {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: CS;
+          justify-items: center;
+          align-items: center;
+        }
+
+        .England {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: EN;
+          background-size: cover;
+          border-radius: 50%;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+
+        .CheckBoxEngland {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: CE;
+          justify-items: center;
+          align-items: center;
+        }
+      }
+
+      .ZoneBtnAdd {
+        @extend .GridCommons;
+        grid-area: AD;
+        grid-template-columns: 3% 1fr 3.5%;
+        grid-template-rows: 36% 1fr 31%;
+        grid-template-areas:
+          ". . ."
+          ". AD ."
+          ". . .";
+
+        .BtnAdd {
+          @extend .SubGrid;
+          display: flex;
+          grid-area: AD;
+        }
+      }
+    }
+
+    .ZoneButtons {
+      @extend .GridCommons;
+      grid-area: BT;
+      grid-column-gap: 1.5rem;
+      grid-template-columns: 42.5% 13.5% 12% 1fr;
+      grid-template-rows: 27% 1fr 22%;
+      grid-template-areas:
+        ". . . ."
+        ". SA EX PH"
+        ". . . .";
+
+      .BtnDelet {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: SA;
+      }
+
+      .BtnExit {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: EX;
+      }
+
+      .BtnPhoto {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: PH;
+      }
+    }
+  }
+}

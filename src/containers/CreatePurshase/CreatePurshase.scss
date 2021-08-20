@@ -1,0 +1,377 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.Border {
+  display: flex;
+  font-size: 0.88rem;
+  font-weight: bold;
+  align-content: center;
+  justify-content: center;
+  border-right: 2px solid $font-white;
+}
+
+.ConfText {
+  font-weight: bold;
+  font-size: 0.88rem;
+  color: $font-awesome-icono;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ConfBox {
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  border-radius: 4px;
+  display: flex;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+}
+
+.Container {
+  @extend .GridCommons;
+  height: 469.813px;
+  min-height: 469.813px;
+  grid-template-columns: 6% 1fr;
+  grid-template-rows: 24% 25% 8.5% 27.5% 1fr;
+  grid-template-areas:
+    ". ZD"
+    ". ZL"
+    ". ZS"
+    ". ZC"
+    ". ZB";
+
+  .ZoneData {
+    @extend .GridCommons;
+    grid-area: ZD;
+    grid-template-columns: 0.5% 1fr 57%;
+    grid-template-rows: 24.5% 1fr 10%;
+    grid-template-areas:
+      ". . ."
+      ". IN ."
+      ". . .";
+
+    .Information {
+      @extend .GridCommons;
+      grid-area: IN;
+      grid-template-columns: 33% 1fr;
+      grid-template-areas: "DA TB";
+
+      .Data {
+        @extend .GridCommons;
+        @extend .ConfText;
+        grid-area: DA;
+      }
+
+      .TextBox {
+        @extend .GridCommons;
+        grid-area: TB;
+        grid-row-gap: 0.3rem;
+
+        .TextBox1 {
+          @extend .ConfBox;
+          width: 97%;
+          min-height: 20px;
+        }
+
+        .TextBox2 {
+          @extend .ConfBox;
+          width: 97%;
+          min-height: 20px;
+        }
+
+        .TextBox3 {
+          @extend .ConfBox;
+          width: 100%;
+          min-height: 20px;
+        }
+      }
+    }
+  }
+
+  .ZoneList {
+    @extend .GridCommons;
+    grid-area: ZL;
+    grid-column-gap: 1rem;
+    grid-template-columns: 0.5% 1fr 57%;
+    grid-template-rows: 7% 1fr 5%;
+    grid-template-areas:
+      ". . ."
+      ". LI CC"
+      ". . .";
+
+    .List {
+      @extend .GridCommons;
+      grid-area: LI;
+      grid-template-rows: 15% 1% 1fr;
+      grid-template-areas:
+        "HE"
+        "."
+        "BO";
+
+      .ZoneHeaderList {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: HE;
+        background: $main-green;
+        color: $font-white;
+        font-weight: bold;
+        width: 80%;
+        font-size: 0.88rem;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+
+        .Title1 {
+          @extend .GridCommons;
+          justify-content: center;
+          align-content: center;
+          font-size: 1rem;
+        }
+      }
+
+      .ZoneBodyList {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: BO;
+        width: 80%;
+        height: 80px;
+        overflow: auto;
+        background: $color-text;
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+      }
+    }
+
+    .ZoneCenteCoste {
+      grid-area: CC;
+      @extend .GridCommons;
+      grid-template-rows: 15% 1% 1fr;
+      grid-template-areas:
+        "TI"
+        "."
+        "LI";
+
+      .ZoneTitle {
+        display: flex;
+        grid-area: TI;
+        background: $main-green;
+        color: $font-white;
+        font-weight: bold;
+        width: 80%;
+        font-size: 0.88rem;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+
+        .Title2 {
+          @extend .GridCommons;
+          justify-content: center;
+          align-content: center;
+          font-size: 1rem;
+        }
+      }
+
+      .List2 {
+        display: flex;
+        grid-area: LI;
+        height: 80px;
+        overflow: auto;
+        align-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .ZoneSearch {
+    @extend .GridCommons;
+    grid-area: ZS;
+    grid-template-columns: 0.5% 1fr 67%;
+    grid-template-rows: 10% 1fr 10%;
+    grid-template-areas:
+      ". . ."
+      ". BS ."
+      ". . .";
+
+    .BtnSearch {
+      @extend .SubGrid;
+      grid-area: BS;
+    }
+  }
+
+  .ZoneSelect {
+    @extend .GridCommons;
+    grid-area: ZC;
+    grid-template-columns: 0.5% 1fr 5.5%;
+    grid-template-rows: 1fr 8%;
+    grid-template-areas:
+      ". SE ."
+      ". . .";
+
+    .Select {
+      @extend .GridCommons;
+      grid-area: SE;
+      grid-template-rows: 20% 1% 1fr;
+      grid-template-areas:
+        "H"
+        "."
+        "B";
+
+      .ZoneHeader {
+        @extend .GridCommons;
+        grid-area: H;
+        background: $main-green;
+        color: $font-white;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        grid-template-columns: 17% 17% 16% 15.2% 10.2% 11.4% 1fr;
+        grid-template-areas: "CO IN EX CA UN CS AD";
+
+        .Code {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: CO;
+        }
+
+        .Iinput {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: IN;
+        }
+
+        .Expiration {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: EX;
+        }
+
+        .Quantity {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: CA;
+        }
+        .Unity {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: UN;
+        }
+
+        .Cost {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: CS;
+        }
+
+        .Add {
+          @extend .SubGrid;
+          @extend .Border;
+          grid-area: AD;
+        }
+      }
+
+      .ZoneBody {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: B;
+        height: 100px;
+        width: 100%;
+        overflow: auto;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .Buttons {
+    @extend .GridCommons;
+    grid-area: ZB;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "BT TO";
+
+    .ZoneButtons {
+      @extend .GridCommons;
+      grid-area: BT;
+      grid-column-gap: 1.6rem;
+      grid-template-columns: 11.5% 15% 11.5% 1fr;
+      grid-template-rows: 9% 1fr 42%;
+      grid-template-areas:
+        ". . . ."
+        "SA . . ."
+        ". . . .";
+
+      .BtnSave {
+        @extend .SubGrid;
+        grid-area: SA;
+      }
+    }
+
+    .ZoneTotal {
+      @extend .GridCommons;
+      grid-area: TO;
+      grid-template-columns: 41% 1fr 24%;
+      grid-template-rows: 20% 1fr 37%;
+      grid-template-areas:
+        ". . ."
+        ". TO ."
+        ". . .";
+
+      .Total {
+        @extend .GridCommons;
+        grid-area: TO;
+        grid-auto-columns: 100%;
+        color: $font-awesome-icono;
+        font-size: 0.9rem;
+        align-content: center;
+        grid-template-columns: 50% 1fr;
+        grid-template-areas: "T N";
+
+        .ZoneText {
+          @extend .GridCommons;
+          grid-area: T;
+          justify-content: center;
+        }
+
+        .ZoneNumber {
+          @extend .GridCommons;
+          grid-area: N;
+          justify-items: right;
+
+          .Text3 {
+            // margin-top: 3rem;
+            // margin-right: 2rem
+          }
+        }
+      }
+    }
+  }
+}
+
+.BoxText {
+  font-size: 0.8rem;
+  background: $color-text;
+  width: 5rem;
+  display: grid;
+  border-radius: 4px;
+  outline: none;
+  border-style: none;
+  text-align: center;
+  color: $font-awesome-icono;
+  font-weight: bold;
+  margin-left: 0.8rem;
+}
+
+.BtnPlus {
+  text-align: center;
+  width: 2rem;
+  color: $font-white;
+  background: $main-green;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,57 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.BtnNew {
+  display: grid;
+  @extend .SubGrid;
+  font-size: 2.5rem;
+  text-align: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 18% 1fr;
+  grid-template-areas:
+    "I"
+    "."
+    "T";
+
+  &:hover > .FrontIcon,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+
+  .FrontIcon {
+    grid-area: I;
+    color: $font-icon-text;
+    z-index: 1;
+    font-size: 2.5rem;
+  }
+
+  .BackIcon {
+    grid-area: I;
+    color: $font-new-icono;
+    font-size: 2.5rem;
+  }
+
+  .Text {
+    @extend .SubGrid;
+    display: flex;
+    grid-area: T;
+    transform: rotateY(180deg);
+    font-size: 0.85rem;
+    position: relative;
+    font-weight: bold;
+    color: $font-icon-text;
+
+  }
+}

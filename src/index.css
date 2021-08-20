@@ -1,0 +1,10 @@
+body>#root>div {
+    display: grid;
+    font-family: "Roboto", sans-serif;
+    width: 960px;
+    height: 540px;
+    align-content: center;
+    justify-content: center;
+    min-width: 960px;
+    min-height: 540px;
+}

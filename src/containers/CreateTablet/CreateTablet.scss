@@ -1,0 +1,151 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ConfSpan {
+  font-size: 1rem;
+  font-weight: bold;
+  align-content: center;
+  color: $font-icon-text;
+}
+
+.ConfBox {
+  display: flex;
+  outline: none;
+  border-style: none;
+  border-radius: 4px;
+  background: $color-text;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+
+.Container {
+  @extend .GridCommons;
+  height: 469.813px;
+  min-height: 469.813px;
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-rows: 5% 20% 50% 1fr;
+  grid-template-areas:
+    ". . ."
+    ". ZF ."
+    ". ZL ."
+    ". ZB .";
+
+  .ZoneFrom {
+    @extend .GridCommons;
+    grid-area: ZF;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas: "ZT ZB";
+
+    .ZoneText {
+      @extend .GridCommons;
+      grid-area: ZT;
+      @extend .ConfSpan;
+      grid-row-gap: 0.8rem;
+      grid-template-rows: 20% 20% 20% 1fr;
+      grid-template-areas:
+        "T"
+        "N"
+        "L"
+        ".";
+
+      .Type {
+        @extend .SubGrid;
+        grid-area: T;
+      }
+
+      .TableNumber {
+        @extend .SubGrid;
+        grid-area: N;
+      }
+
+      .Location {
+        @extend .SubGrid;
+        grid-area: L;
+      }
+    }
+
+    .ZoneBox {
+      @extend .GridCommons;
+      grid-area: ZB;
+      grid-row-gap: 0.8rem;
+      grid-template-columns: 40% 1fr;
+      grid-template-rows: 20% 20% 20% 1fr;
+      grid-template-areas:
+        "T ."
+        "N ."
+        "L ."
+        ". .";
+
+      .Box1 {
+        @extend .SubGrid;
+        grid-area: T;
+        @extend .ConfBox;
+      }
+
+      .Box2 {
+        @extend .SubGrid;
+        grid-area: N;
+        @extend .ConfBox;
+      }
+
+      .Box3 {
+        @extend .SubGrid;
+        grid-area: L;
+        @extend .ConfBox;
+      }
+    }
+  }
+
+  .ZoneList {
+    @extend .GridCommons;
+    grid-area: ZL;
+    min-height: 100%;
+    grid-template-rows: 19% 1% 1fr;
+    grid-template-areas:
+      "TI"
+      "."
+      "LI";
+
+    .ZoneTitle {
+      @extend .SubGrid;
+      grid-area: TI;
+    }
+
+    .ZoneBody {
+      @extend .SubGrid;
+      grid-area: LI;
+    }
+  }
+
+  .ZoneButtons {
+    @extend .GridCommons;
+    grid-area: ZB;
+    grid-template-columns: 80% 15% 1fr;
+    grid-template-rows: 25% 1fr 10%;
+    grid-template-areas:
+      ". . ."
+      ". BS BE"
+      ". . .";
+
+    .BtnSave {
+      @extend .SubGrid;
+      grid-area: BS;
+    }
+
+    .BtnEdit {
+      @extend .SubGrid;
+      grid-area: BE;
+    }
+  }
+}

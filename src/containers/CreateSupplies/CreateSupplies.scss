@@ -1,0 +1,256 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfSpan {
+  font-size: 1rem;
+  font-weight: bold;
+  align-content: center;
+  color: $font-icon-text;
+}
+
+.ConfBox {
+  display: flex;
+  outline: none;
+  border-style: none;
+  border-radius: 4px;
+  background: $color-text;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+  padding-left: 5px;
+  box-sizing: border-box;
+  height: 1.45rem;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-columns: 6.7% 1fr 5%;
+  grid-template-rows: 5.5% 33% 42% 20% 1fr;
+  grid-template-areas:
+    ". . ."
+    ". ZO ."
+    ". ZB  ."
+    ". ZT ."
+    ". . .";
+
+  .Zone1 {
+    @extend .GridCommons;
+    grid-area: ZO;
+    grid-template-columns: 40% 1fr;
+    grid-template-areas: "FT FB";
+
+    .FormText {
+      @extend .GridCommons;
+      grid-area: FT;
+      align-content: center;
+      justify-content: left;
+      grid-row-gap: 0.6rem;
+      grid-template-columns: 30% 1fr;
+      grid-template-rows: 15% 15% 15% 15% 1fr;
+      grid-template-areas:
+        "ZN BN"
+        "ZC BC"
+        "ZU BU"
+        "ZR BR"
+        "ZS BS";
+
+      .ZoneName {
+        grid-area: ZN;
+        @extend .SubGrid;
+        @extend .ConfSpan;
+      }
+
+      .ZoneCode {
+        grid-area: ZC;
+        @extend .SubGrid;
+        @extend .ConfSpan;
+      }
+
+      .ZoneUnity {
+        grid-area: ZU;
+        @extend .SubGrid;
+        @extend .ConfSpan;
+      }
+      .ZoneCritical {
+        grid-area: ZR;
+        @extend .SubGrid;
+        @extend .ConfSpan;
+      }
+      .ZoneCenterCosto {
+        grid-area: ZS;
+        @extend .SubGrid;
+        @extend .ConfSpan;
+      }
+      .CenterCoste {
+        grid-area: BS;
+      }
+
+      .BoxName {
+        grid-area: BN;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+
+      .BoxDate {
+        grid-area: BR;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+      .BoxCode {
+        grid-area: BC;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+
+      .ComboBox {
+        @extend .SubGrid;
+        display: flex;
+        box-sizing: content-box;
+        grid-area: BU;
+        width: 100%;
+      }
+    }
+
+    .FormBox {
+      @extend .GridCommons;
+      grid-area: FB;
+      padding-left: 3rem;
+      box-sizing: content-box;
+      grid-row-gap: 0.8rem;
+      grid-template-columns: 20% 50% 1fr;
+      grid-template-rows: 15% 15% 15% 15% 1fr;
+      grid-template-areas:
+        "ZN BN ."
+        "ZC BC ."
+        "ZU BU ."
+        "ZR BR ."
+        ". . .";
+
+      .ZoneMin {
+        grid-area: ZN;
+        @extend .GridCommons;
+        @extend .ConfSpan;
+        box-sizing: content-box;
+      }
+
+      .ZoneMax {
+        grid-area: ZC;
+        @extend .GridCommons;
+        @extend .ConfSpan;
+      }
+
+      .ZoneOpt {
+        grid-area: ZU;
+        @extend .GridCommons;
+        @extend .ConfSpan;
+      }
+      .ZoneTime {
+        grid-area: ZR;
+        @extend .GridCommons;
+        @extend .ConfSpan;
+      }
+
+      .BoxMin {
+        grid-area: BN;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+
+      .BoxMax {
+        grid-area: BC;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+      .BoxOpt {
+        grid-area: BU;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+      .BoxCritical {
+        grid-area: BR;
+        @extend .SubGrid;
+        @extend .ConfBox;
+      }
+    }
+  }
+
+  .Zone2 {
+    @extend .GridCommons;
+    grid-area: ZB;
+    grid-template-rows: 23% 1% 1fr;
+    grid-template-areas:
+      "HE"
+      "."
+      "BO";
+
+    .ZoneTitle {
+      @extend .SubGrid;
+      grid-area: HE;
+    }
+
+    .ZoneBody {
+      @extend .SubGrid;
+      grid-area: BO;
+      height: 150px;
+    }
+  }
+
+  .Zone3 {
+    @extend .GridCommons;
+    grid-area: ZT;
+    grid-template-columns: 60% 1fr;
+    grid-template-areas: "SE BT";
+
+    .ZoneSearch {
+      @extend .GridCommons;
+      grid-area: SE;
+      grid-template-columns: 10% 1fr 15%;
+      grid-template-rows: 10% 1fr 50%;
+      grid-template-areas:
+        ". . ."
+        ". SE ."
+        ". . .";
+
+      .BtnSearch {
+        @extend .SubGrid;
+        grid-area: SE;
+      }
+    }
+
+    .ZoneButtons {
+      @extend .GridCommons;
+      grid-area: BT;
+      grid-column-gap: 0.4rem;
+      grid-template-columns: 25.5% 24.5% 22.5% 1fr;
+      grid-template-rows: 15% 1fr 41%;
+      grid-template-areas:
+        ". . . ."
+        ". ED SA EX"
+        ". . . .";
+
+      .BtnEdit {
+        @extend .SubGrid;
+        grid-area: ED;
+      }
+
+      .BtnSave {
+        @extend .SubGrid;
+        grid-area: SA;
+      }
+
+      .BtnExit {
+        @extend .SubGrid;
+        grid-area: EX;
+      }
+    }
+  }
+}

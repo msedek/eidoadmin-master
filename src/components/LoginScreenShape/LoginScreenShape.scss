@@ -1,0 +1,131 @@
+@import '../../_variables.scss';
+
+.GridCommons {
+    display: grid;
+    @extend .SubGrid
+}
+
+.SubGrid {
+    width: 100%;
+    height: 100%;
+}
+
+.User {
+    grid-area: US;
+    @extend .GridCommons;
+    border-radius: 200px;
+    background: $color-login;
+    overflow: hidden;
+    grid-template-columns: 1.8% 17.2% 5.1% 65% 1fr;
+    grid-template-areas: 'S1 IC S2 TE S3';
+    
+    .Separator1 {
+        grid-area: S1;
+        @extend .SubGrid;
+    }
+    
+    .Icon {
+        grid-area: IC;
+        @extend .GridCommons;
+        grid-template-rows: 6.1% 1fr 6.1%;
+        grid-template-areas: 'B1'
+                             'CI'
+                             'B2';
+        
+        .Border1 {
+           grid-area: B1; 
+           @extend .SubGrid;
+        }
+        
+        .Circle {
+           grid-area: CI;
+           border-radius: 50%;
+           overflow: hidden;
+           max-width: 100%;
+           max-height: 100%;
+           background: $color-circle;
+           @extend .GridCommons;
+           grid-template-columns: 25.9% 1fr 25.9%;
+           grid-template-rows: 23.9% 1fr 23.9%;
+           grid-template-areas: 'A1 A1 A1'
+                                'A2 RI A3'
+                                'A4 A4 A4';
+           
+            .RealIcon {
+                grid-area: RI;
+                display: flex;
+                @extend .SubGrid;
+                font-size: 1.5rem;
+                align-self: center;
+                color: $font-awesome-icono;    
+            }
+           
+            .MarginIcon1 {
+                grid-area: A1;
+                @extend .SubGrid;
+            }
+           
+            .MarginIcon2 {
+                grid-area: A2;
+                @extend .SubGrid;
+            }
+           
+            .MarginIcon3 {
+                grid-area: A3;
+                @extend .SubGrid;
+            }
+           
+            .MarginIcon4 {
+                grid-area: A4;
+                @extend .SubGrid;
+            }
+        }
+        
+        .Border2 {
+           grid-area: B2; 
+           @extend .SubGrid;
+        }
+    }
+    
+    .Separator2 {
+        grid-area: S2;
+        @extend .SubGrid;
+    }
+    
+    .Text {
+        grid-area: TE;
+        @extend .GridCommons;
+        grid-template-rows: 39% 1fr 39%;
+        grid-template-areas: 'M1'
+                             'RT'
+                             'M2';
+        
+        .MarginTxt1 {
+            grid-area: M1;
+            @extend .SubGrid;
+        }
+        
+        .RealText {
+            grid-area: RT;
+            @extend .SubGrid;
+            display: flex;
+            
+            .TextBox {
+                background: $color-login;
+                outline: none;
+                border-style: none;
+                align-self: center;
+            } 
+        }
+        
+        .MarginTxt2 {
+            grid-area: M2;
+            @extend .SubGrid;
+        }
+    }
+    
+    .Separator3 {
+        grid-area: S3;
+        @extend .SubGrid;
+    }
+}

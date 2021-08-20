@@ -1,0 +1,54 @@
+@import "../../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.BtnEdit {
+  display: grid;
+  @extend .GridCommons;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 18% 1fr;
+  grid-template-areas:
+    "I"
+    "."
+    "T";
+
+  &:hover > .FrontIcon,
+  &:active {
+    filter: brightness($base-percent * 110);
+    cursor: pointer;
+  }
+
+  .FrontIcon {
+    grid-area: I;
+    color: $main-green;
+    z-index: 1;
+    margin-top: -0.2rem;
+  }
+
+  .BackIcon {
+    grid-area: I;
+    color: $back-green;
+    font-size: 2.4rem;
+    margin-top: -0.2rem;
+  }
+
+  .Text {
+    @extend .SubGrid;
+    grid-area: T;
+    font-size: 0.85rem;
+    color: $font-icon-text;
+    position: relative;
+    font-weight: bold;
+  }
+}

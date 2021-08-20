@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  width: 960px;
+  height: 540px;
+  min-width: 960px;
+  min-height: 540px;
+  margin: 1% auto;
+}
+
+body {
+  display: grid;
+  font-family: "Roboto", sans-serif;
+  min-height: 540px;
+  min-width: 960px;
+  margin: 0;
+}

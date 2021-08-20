@@ -1,0 +1,132 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.LoginContainer {
+  @extend .GridCommons;
+  grid-template-columns: 34.1% 1fr 34.1%;
+  grid-template-areas: "Z1 ZC ZO";
+
+  .Zone1 {
+    grid-area: Z1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ContainerControls {
+    grid-area: ZC;
+    @extend .GridCommons;
+    grid-template-rows: 29.8% 12% 2% 12% 19.3% 1fr;
+    grid-template-areas:
+      "M1"
+      "US"
+      "M2"
+      "CN"
+      "M3"
+      "BT";
+
+    .Margin1 {
+      grid-area: M1;
+      @extend .SubGrid;
+      display: flex;
+    }
+
+    .User {
+      grid-area: US;
+      @extend .SubGrid;
+      border-radius: 200px;
+      background: $color-login;
+      overflow: hidden;
+    }
+
+    .Margin2 {
+      grid-area: M2;
+      @extend .SubGrid;
+      display: flex;
+    }
+
+    .Passaword {
+      grid-area: CN;
+      @extend .SubGrid;
+      border-radius: 200px;
+      background: $color-login;
+      overflow: hidden;
+    }
+
+    .Button {
+      grid-area: BT;
+      @extend .GridCommons;
+      grid-template-columns: 32.5% 1fr 32.5%;
+      grid-template-rows: 48.9% 1fr;
+      grid-template-areas:
+        "B1 BT B2"
+        "B3 B4 B5";
+
+      .RealButton {
+        grid-area: BT;
+        @extend .GridCommons;
+        background: $main-green;
+        border-radius: 200px;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
+        cursor: pointer;
+        grid-template-rows: 33% 1fr;
+        grid-template-areas:
+          "M1"
+          "TX";
+
+        &:hover,
+        &:active {
+          background: lighten($main-green, $bright);
+        }
+
+        .TextBtn {
+          grid-area: TX;
+          @extend .SubGrid;
+          text-align: center;
+          color: $font-white;
+          font-weight: bold;
+        }
+      }
+
+      .BorderBtn2 {
+        grid-area: B2;
+        @extend .SubGrid;
+      }
+
+      .BorderBtn3 {
+        grid-area: B3;
+        @extend .SubGrid;
+      }
+
+      .BorderBtn4 {
+        grid-area: B4;
+        @extend .SubGrid;
+      }
+
+      .BorderBtn5 {
+        grid-area: B5;
+        @extend .SubGrid;
+      }
+    }
+  }
+
+  .ContainerOnOff {
+    grid-area: ZO;
+    @extend .GridCommons;
+    grid-template-columns: 51.5% 1fr;
+    grid-template-rows: 11.5% 1fr;
+    grid-template-areas:
+      ". SW"
+      ". .";
+  }
+}

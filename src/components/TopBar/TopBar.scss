@@ -1,0 +1,71 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfGenral {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.TopBarContainer {
+  @extend .GridCommons;
+  grid-template-columns: 8.2% 9.7% 9.9% 8.6% 11.8% 10.4%;
+  grid-column-gap: 4.3rem;
+  justify-content: right;
+  color: $font-awesome-icono;
+  grid-template-rows: 35.9% 1fr;
+  grid-template-areas:
+    ". . . . . ."
+    "EN PR CT BU ST IN";
+
+  .Enterprise {
+    @extend .SubGrid;
+    grid-area: EN;
+    @extend .ConfGenral;
+    height: 33.5%;
+  }
+
+  .Product {
+    @extend .SubGrid;
+    grid-area: PR;
+    height: 33.5%;
+    @extend .ConfGenral;
+  }
+
+  .Catalogue {
+    @extend .SubGrid;
+    grid-area: CT;
+    height: 33.5%;
+    @extend .ConfGenral;
+  }
+
+  .Buy {
+    @extend .SubGrid;
+    grid-area: BU;
+    height: 33.5%;
+    @extend .ConfGenral;
+  }
+
+  .Statistics {
+    @extend .SubGrid;
+    grid-area: ST;
+    height: 33.5%;
+    @extend .ConfGenral;
+  }
+
+  .Inventory {
+    @extend .SubGrid;
+    grid-area: IN;
+    height: 33.5%;
+    @extend .ConfGenral;
+  }
+}

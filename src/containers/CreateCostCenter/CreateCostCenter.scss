@@ -1,0 +1,128 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfBox {
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-rows: 50% 1fr;
+  grid-template-areas:
+    "ZD"
+    "BT";
+
+  .ZoneData {
+    @extend .GridCommons;
+    grid-area: ZD;
+    grid-template-columns: 61% 1fr;
+    grid-template-areas: "ZD ZI";
+
+    .Data {
+      @extend .GridCommons;
+      grid-area: ZD;
+      grid-template-columns: 33% 1fr;
+      grid-template-areas: "ZI ZT";
+
+      .ZoneInfo {
+        @extend .GridCommons;
+        grid-area: ZI;
+        grid-row-gap: 1rem;
+        justify-content: left;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $font-icon-text;
+        grid-template-columns: 25% 1fr;
+        grid-template-rows: 10% 10% 10% 1fr;
+        grid-template-areas:
+          ". ."
+          ". NA"
+          ". CO"
+          ". .";
+
+        .ZoneName {
+          @extend .SubGrid;
+          grid-area: NA;
+        }
+
+        .ZoneCode {
+          @extend .SubGrid;
+          grid-area: CO;
+        }
+      }
+
+      .ZoneText {
+        @extend .GridCommons;
+        grid-area: ZT;
+        grid-row-gap: 1rem;
+        grid-template-columns: 75% 1fr;
+        grid-template-rows: 9% 11% 11.5% 1fr;
+        grid-template-areas:
+          ". ."
+          "NA ."
+          "CO ."
+          ". .";
+
+        .TextName {
+          @extend .SubGrid;
+          grid-area: NA;
+
+          .Text {
+            @extend .ConfBox;
+          }
+        }
+
+        .textCode {
+          @extend .SubGrid;
+          grid-area: CO;
+
+          .Text1 {
+            @extend .ConfBox;
+          }
+        }
+      }
+    }
+  }
+
+  .ZoneButtons {
+    @extend .GridCommons;
+    grid-area: BT;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: 76.5% 7% 7% 1fr;
+    grid-template-rows: 54% 1fr 22.9%;
+    grid-template-areas:
+      ". . . ."
+      ". SA EX ."
+      ". . . .";
+
+    .BtnSave {
+      @extend .SubGrid;
+      grid-area: SA;
+    }
+
+    .BtnExit {
+      @extend .SubGrid;
+      grid-area: EX;
+    }
+  }
+}

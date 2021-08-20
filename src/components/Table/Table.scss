@@ -1,0 +1,28 @@
+@import "../../_variables.scss";
+
+.ContainerTable {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1.1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .InnerCircle {
+    height: 76%;
+    width: 76%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 0px rgba(31, 30, 31, 0.5);
+    color: $font-white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../_variables.scss';
+
+.GridCommons {
+    display: grid;
+    @extend .SubGrid
+}
+
+.SubGrid {
+    width: 100%;
+    height: 100%;
+}
+
+.ContainerList {
+  @extend .GridCommons;
+  grid-template-columns: 4.5% 1fr 4.2%;
+  grid-template-areas: '. LI .';
+
+  .ListaCheck {
+    display: flex;
+    grid-area: LI;
+    height: 100%; 
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+  }
+}

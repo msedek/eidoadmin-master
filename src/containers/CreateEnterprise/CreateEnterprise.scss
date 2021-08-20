@@ -1,0 +1,265 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.ConfBox {
+  background: $color-text;
+  border-radius: 4px;
+  overflow: hidden;
+  align-content: center;
+  height: 100%;
+}
+
+.ConfTextField {
+  background: $color-text;
+  outline: none;
+  border-style: none;
+  align-self: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: $font-icon-text;
+  font-weight: bold;
+}
+.ConfText {
+  font-weight: bold;
+  color: $font-awesome-icono;
+  font-size: 0.97rem;
+}
+
+.ContainerEnterprise {
+  @extend .GridCommons;
+  height: 469.813px;
+  min-height: 469.813px;
+  grid-template-columns: 61% 1fr;
+  grid-template-rows: 60% 1fr;
+  grid-template-areas:
+    "DT PH"
+    "ZL ZB";
+
+  .DataCreate {
+    grid-area: DT;
+    @extend .GridCommons;
+    font-weight: bold;
+    grid-template-columns: 35% 1fr;
+    grid-template-rows: 70% 1fr;
+    grid-template-areas: "DE CD";
+
+    .DataEnterprise {
+      grid-area: DE;
+      @extend .GridCommons;
+      @extend .ConfText;
+      grid-template-columns: 24% 70% 1fr;
+      grid-template-rows: 9.5% 13% 5% 13% 5% 25% 5% 25% 5% 13%;
+      grid-template-areas:
+        ". . ."
+        ". NA ."
+        ". . ."
+        ". RU ."
+        ". . ."
+        ". F1 ."
+        ". . ."
+        ". F2 ."
+        ". . ."
+        ". WS .";
+
+      .NameEnterprise {
+        grid-area: NA;
+        @extend .SubGrid;
+      }
+
+      .RucEnterprise {
+        grid-area: RU;
+        @extend .SubGrid;
+      }
+
+      .FiscalAddress {
+        grid-area: F1;
+        @extend .SubGrid;
+      }
+
+      .FiscalPhysical {
+        grid-area: F2;
+        @extend .SubGrid;
+      }
+
+      .WebSite {
+        grid-area: WS;
+        @extend .SubGrid;
+      }
+    }
+
+    .CreateData {
+      grid-area: CD;
+      @extend .GridCommons;
+      grid-template-columns: 2% 1fr 3.8%;
+      grid-template-rows: 9.5% 13% 5% 13% 5% 25% 5% 25% 5% 13%;
+      grid-template-areas:
+        ". . ."
+        ". NA ."
+        ". . ."
+        ". RU ."
+        ". . ."
+        ". F1 ."
+        ". . ."
+        ". F2 ."
+        ". . ."
+        ". WS .";
+
+      .TextName {
+        grid-area: NA;
+        @extend .GridCommons;
+        @extend .ConfBox;
+
+        .RealName {
+          @extend .ConfTextField;
+        }
+      }
+
+      .TextRuc {
+        grid-area: RU;
+        @extend .SubGrid;
+        @extend .ConfBox;
+
+        .RealRuc {
+          @extend .ConfTextField;
+          width: 100%;
+        }
+      }
+
+      .TextAddress {
+        grid-area: F1;
+        @extend .SubGrid;
+        @extend .ConfBox;
+
+        .RealAddress {
+          @extend .ConfTextField;
+          width: 100%;
+        }
+      }
+
+      .TextPhysical {
+        grid-area: F2;
+        @extend .SubGrid;
+        @extend .ConfBox;
+
+        .RealPhysical {
+          @extend .ConfTextField;
+          width: 100%;
+        }
+      }
+
+      .TextWeb {
+        grid-area: WS;
+        @extend .SubGrid;
+        @extend .ConfBox;
+
+        .RealWeb {
+          @extend .ConfTextField;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  .ZoneList {
+    grid-area: ZL;
+    @extend .GridCommons;
+    min-height: 100%;
+    grid-template-rows: 23.5% 1% 1fr;
+    grid-template-areas:
+      "TI"
+      "."
+      "LI";
+
+    .ZoneTitle {
+      @extend .SubGrid;
+      grid-area: TI;
+    }
+
+    .List {
+      @extend .SubGrid;
+      grid-area: LI;
+    }
+  }
+
+  .Image {
+    grid-area: PH;
+    @extend .GridCommons;
+    grid-template-rows: 60% 10% 1fr;
+    grid-template-areas:
+      "IM"
+      "BS"
+      ".";
+
+    .Logo {
+      grid-area: IM;
+      @extend .GridCommons;
+      grid-template-columns: 5% 1fr 9.5%;
+      grid-template-rows: 19% 1fr 1%;
+      grid-template-areas:
+        ". . ."
+        ". IM ."
+        ". . .";
+
+      .RealLogo {
+        grid-area: IM;
+        @extend .SubGrid;
+        background: $font-awesome-icono;
+      }
+    }
+
+    .TextBranch {
+      @extend .GridCommons;
+      grid-area: BS;
+      grid-template-rows: 25% 1fr;
+      grid-template-columns: 5% 35% 1% 10% 1fr;
+      grid-template-areas:
+        ". . . . ."
+        ". TX . BX .";
+
+      .NoBranch {
+        grid-area: TX;
+        @extend .SubGrid;
+        font-weight: bold;
+        color: $font-awesome-icono;
+        font-size: 0.97rem;
+        margin-top: 0.3rem;
+      }
+
+      .RealBranch {
+        grid-area: BX;
+        @extend .SubGrid;
+        @extend .ConfTextField;
+        height: 1.5rem;
+        width: 2rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  .ZoneButton {
+    grid-area: ZB;
+    @extend .GridCommons;
+    grid-column-gap: 1.8rem;
+    grid-template-columns: 38% 18% 14.5% 1fr;
+    grid-template-rows: 55% 1fr 100%;
+    grid-template-areas:
+      ". . . ."
+      ". . SA ."
+      ". . . .";
+
+    .BtnSave {
+      @extend .SubGrid;
+      grid-area: SA;
+    }
+  }
+}

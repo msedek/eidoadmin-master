@@ -1,0 +1,196 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.ConfText {
+  font-size: 0.97rem;
+  font-weight: bold;
+  color: $font-awesome-icono;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.Container {
+  @extend .GridCommons;
+  grid-template-rows: 50% 25% 1fr;
+  grid-template-areas:
+    "ZD"
+    "ZT"
+    "ZB";
+
+  .ZoneData {
+    @extend .GridCommons;
+    grid-area: ZD;
+    grid-template-columns: 22% 38% 1fr;
+    grid-template-areas: "I D P";
+
+    .InfoEnterprise {
+      @extend .GridCommons;
+      grid-area: I;
+      grid-row-gap: 1rem;
+      @extend .ConfText;
+      grid-template-columns: 23% 1fr;
+      grid-template-rows: 10% 10% 10% 10% 10% 1fr;
+      grid-template-areas:
+        ". ."
+        ". NA"
+        ". RU"
+        ". DR"
+        ". CC"
+        ". .";
+
+      .Name {
+        @extend .SubGrid;
+        grid-area: NA;
+      }
+
+      .Ruc {
+        @extend .SubGrid;
+        grid-area: RU;
+      }
+
+      .FiscalAddress {
+        @extend .SubGrid;
+        grid-area: DR;
+      }
+
+      .CostCenter {
+        @extend .SubGrid;
+        grid-area: CC;
+      }
+    }
+
+    .DataEnterprise {
+      @extend .GridCommons;
+      grid-area: D;
+      grid-row-gap: 1rem;
+      @extend .ConfText;
+      justify-items: left;
+      grid-template-columns: 100%;
+      grid-template-rows: 10% 10% 10% 10% 10% 1fr;
+      grid-template-areas:
+        "."
+        "NA"
+        "RU"
+        "DR"
+        "CC"
+        ".";
+
+      .DataName {
+        @extend .SubGrid;
+        grid-area: NA;
+      }
+
+      .DataRuc {
+        @extend .SubGrid;
+        grid-area: RU;
+      }
+
+      .DataFiscalAddress {
+        @extend .SubGrid;
+        grid-area: DR;
+      }
+
+      .DataCostCenter {
+        @extend .SubGrid;
+        grid-area: CC;
+        width: 15rem;
+        border-radius: 200px;
+        overflow: hidden;
+      }
+    }
+
+    .ZoneImag {
+      @extend .GridCommons;
+      grid-area: P;
+      grid-template-columns: 6.8% 1fr 9.5%;
+      grid-template-rows: 19% 1fr 26.5%;
+      grid-template-areas:
+        ". . ."
+        ". IM ."
+        ". . .";
+
+      .RealImage {
+        @extend .SubGrid;
+        display: flex;
+        grid-area: IM;
+        background: $font-awesome-icono;
+      }
+    }
+  }
+
+  .ZoneText {
+    @extend .GridCommons;
+    grid-area: ZT;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-areas: ". TX .";
+
+    .RealText {
+      @extend .SubGrid;
+      grid-area: TX;
+
+      .Text {
+        background: $color-text;
+        outline: none;
+        border-style: none;
+        align-self: center;
+        width: 100%;
+        height: 100%;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: $font-icon-text;
+      }
+    }
+  }
+
+  .ZoneButtos {
+    @extend .GridCommons;
+    grid-area: ZB;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "P S";
+
+    .ZoneBtnPlus {
+      @extend .GridCommons;
+      grid-area: P;
+      grid-template-columns: 32.5% 1fr 14%;
+      grid-template-rows: 16% 1fr 65%;
+      grid-template-areas:
+        ". . ."
+        ". BT ."
+        ". . .";
+
+      .BtnPlus {
+        @extend .SubGrid;
+        grid-area: BT;
+      }
+    }
+
+    .ZoneBtnDE {
+      @extend .GridCommons;
+      grid-area: S;
+      grid-column-gap: 1.5rem;
+      grid-template-columns: 55.2% 11.9% 13.9% 1fr;
+      grid-template-rows: 8% 1fr 45%;
+      grid-template-areas:
+        ". . . ."
+        ". ED EX ."
+        ". . . .";
+
+      .BtnEdit {
+        @extend .SubGrid;
+        grid-area: ED;
+      }
+
+      .BtnExit {
+        @extend .SubGrid;
+        grid-area: EX;
+      }
+    }
+  }
+}

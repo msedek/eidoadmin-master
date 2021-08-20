@@ -1,0 +1,83 @@
+@import "../../_variables.scss";
+
+.GridCommons {
+  display: grid;
+  @extend .SubGrid;
+}
+
+.SubGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.SideBarContainer {
+  @extend .GridCommons;
+  grid-row-gap: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: $font-awesome-icono;
+  grid-template-rows: 0% 5% 5% 5% 5% 5%;
+  grid-template-areas:
+    "."
+    "ME"
+    "CE"
+    "CC"
+    "CU"
+    "CM";
+
+  .ZoneText1 {
+    @extend .GridCommons;
+    grid-area: ME;
+    align-content: center;
+
+    .Text1 {
+      margin-right: 0.78rem;
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText2 {
+    @extend .GridCommons;
+    grid-area: CE;
+    align-content: center;
+
+    .Text2 {
+      margin-left: 0.7rem;
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText3 {
+    @extend .GridCommons;
+    grid-area: CC;
+    align-content: center;
+
+    .Text3 {
+      margin-left: 1.25rem;
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText4 {
+    @extend .GridCommons;
+    grid-area: CU;
+    align-content: center;
+
+    .Text4 {
+      margin-left: 1.25rem;
+      cursor: pointer;
+    }
+  }
+
+  .ZoneText5 {
+    @extend .GridCommons;
+    grid-area: CM;
+    align-content: center;
+
+    .Text5 {
+      margin-left: -0.3rem;
+      cursor: pointer;
+    }
+  }
+}
